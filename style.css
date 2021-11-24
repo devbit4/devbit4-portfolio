@@ -190,54 +190,148 @@ li {
 	background: #efefef;
 }
 
-#skills p{margin-bottom: 40px}
+#skills p {
+	margin-bottom: 40px;
+}
 
-.skillset_title{
+.skillset_title {
 	color: #fff;
 	margin-bottom: 10px;
 }
-.skillset{
+.skillset {
 	display: flex;
 	justify-content: center;
 	background: #ccc;
 	color: #444;
 }
 
-
-
-.skillset__left{
+.skillset__left {
 	flex-basis: 60%;
 	padding: 40px;
 }
-.skill{
+.skill {
 	margin-bottom: 8px;
 }
 
-.skill__descrition{
+.skill__descrition {
 	display: flex;
 	justify-content: space-between;
 }
-.skill__bar{
+.skill__bar {
 	width: 100%;
 	height: 3px;
 	background: gray;
 }
-.skill__value{
+.skill__value {
 	height: 3px;
 	background: yellow;
 }
-.skillset__right{
+.skillset__right {
 	flex-basis: 40%;
 }
 
-.tools{
+.tools {
 	background: #aaa;
 }
 
-.etc{
+.etc {
 	background: #888;
 }
 
-.tools, .etc{
+.tools,
+.etc {
 	padding: 20px;
+}
+
+/* work */
+.work__categories{
+	margin: 40px;
+}
+.category__btn{
+	border: 1px solid #fff;
+	border-radius: 4px;
+	font-size: 16px;
+	padding: 8px 40px;
+}
+
+.category__btn.active,
+.category__btn:hover{
+	background: #000;
+	color: #fff;
+}
+.category__count{
+	background-color: orange;
+	border-radius: 50%;
+	color: #fff;
+	display: inline-block;
+	width: 24px;
+	height: 24px;
+	line-height: 24px;
+
+	position: relative;
+	top: -20px;
+	opacity: 0;
+	transition: all 0.3s ease-in;
+}
+
+.category__btn.active .category__count,
+.category__btn:hover .category__count{
+	opacity: 1;
+}
+
+.work__projects{
+	display: flex;
+	flex-wrap:wrap;
+	justify-content: center;
+}
+.project {
+	width: calc(1160px / 4);
+	height: 250px;
+	margin: 2px;
+	background-color: #efefef;
+	position: relative;
+	opacity: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.project__img{
+	max-width: 100%;
+	max-height: 100%;
+
+}
+
+.project__description{
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: #000;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	opacity: 0;
+	transition: all 0.3s ease-in;
+	transform: rotateY(90deg);
+}
+
+.project:hover .project__description {
+	opacity: 0.8;
+	transform: rotateY(0deg);
+}
+.project__description h3{
+	color: #fff;
+}
+
+.project__description h3::after{
+	content: "";
+	display: block;
+	width: 25px;
+	height: 2px;
+	background: #fff;
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+	margin: 10px 0px;
 }
