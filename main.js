@@ -1,15 +1,26 @@
 'use strict';
 
-//navbar is changed when you scroll down
+
 const navbar = document.querySelector('#navbar');
 const menu = document.querySelectorAll('.navbar__menu__item');
 
+
 window.addEventListener('scroll', () => {
+
+    //navbar is changed when you scroll down
+
     if (window.scrollY > navbar.offsetHeight) {
         navbar.classList.add('navbar--dark');
     } else {
         navbar.classList.remove('navbar--dark');
     }
+
+    //home faded when you scroll down
+    const home = document.querySelector(".home__container");
+
+    home.style.opacity = 1 - (window.scrollY / home.offsetHeight);
+
+
 });
 
 //handle scrolling

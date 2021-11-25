@@ -96,7 +96,12 @@ li {
 	padding: 40px;
 	text-align: center;
 	padding-top: 120px;
+	/* opacity: 1;
+	transition: all 1s ease; */
 }
+/* #home.home--faded{
+	opacity: 0.4;
+} */
 
 .home__avatar {
 	width: 250px;
