@@ -28,11 +28,16 @@ li {
 	color: white;
 	padding: 10px 16px;
 	transition: all 0.3s ease-in;
+	z-index: 10;
 
 }
 #navbar.navbar--dark{
-	background: black;
+	opacity: 0;
 
+}
+#navbar.navbar--dark:hover{
+	opacity: 1;
+	background: #000;
 }
 
 .navbar__logo img {
@@ -82,6 +87,7 @@ li {
 	background: transparent;
 	border: none;
 	display: none;
+	z-index: 15;
 }
 /* home */
 
