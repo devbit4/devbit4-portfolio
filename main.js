@@ -10,10 +10,10 @@ window.addEventListener('scroll', () => {
     //navbar is changed when you scroll down
 
     if (window.scrollY > navbar.offsetHeight) {
-        navbar.classList.add('navbar--dark');
+        navbar.classList.add('navbar--trans');
 
     } else {
-        navbar.classList.remove('navbar--dark');
+        navbar.classList.remove('navbar--trans');
     }
 
     //home faded when you scroll down
@@ -24,14 +24,19 @@ window.addEventListener('scroll', () => {
 
 });
 
+
+
+
 //handle scrolling
 
 const navbarMenu = document.querySelector('.navbar__menu');
 console.log(navbarMenu);
 navbarMenu.addEventListener('click', (e) => {
+    const link = e.target.dataset.link;
     if (!link) return;
 
-    const link = e.target.dataset.link;
+
+    // console.log(link)
 
     document.querySelector(link).scrollIntoView();
 });
@@ -70,3 +75,62 @@ arrow.addEventListener('click', (e) => {
 
 //     document.querySelector(link).scrollIntoView();
 // }
+
+
+//projects
+
+const workBtnContainer = document.querySelector(".work__categories");
+const projectContainer = document.querySelector(".work__projects");
+const projects = document.querySelectorAll(".project");
+
+workBtnContainer.addEventListener("click", (e) => {
+    const filter = e.target.dataset.filter || e.target.parentNode.dataset.filter;
+
+    if (filter == null) {
+        return;
+    }
+
+    console.log(filter);
+
+    projects.forEach(project => {
+
+        const type = project.dataset.type;
+        if (filter === "*" || filter === type) {
+            project.classList.remove("invisible");
+        } else {
+            project.classList.add("invisible");
+        }
+
+    }
+    )
+})
+
+const workCategories = document.querySelector(".work__categories")
+
+//work btn
+workCategories.addEventListener("click", (e) => {
+
+    const activeBtn = document.querySelector(".category__btn.active");
+
+    activeBtn.classList.remove("active");
+    // for (let workBtn of workBtns) {
+
+    //     workBtn.classList.remove("active");
+    // }
+
+    const target = e.target.nodeName == "BUTTON" ? e.target : e.target.parentNode;
+    target.classList.add("active");
+
+
+})
+
+//if you click toggle button, menu is open
+
+const toggleBtn = document.querySelector(".navbar__toggle-button");
+
+console.log(toggleBtn);
+
+toggleBtn.addEventListener("click", (e) => {
+    const menu = document.querySelector(".navbar__menu");
+    menu.classList.toggle("on");
+})
