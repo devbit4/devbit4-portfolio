@@ -11,6 +11,7 @@ window.addEventListener('scroll', () => {
 
     if (window.scrollY > navbar.offsetHeight) {
         navbar.classList.add('navbar--dark');
+
     } else {
         navbar.classList.remove('navbar--dark');
     }
@@ -42,8 +43,30 @@ contactBtn.addEventListener('click', () => {
     document.querySelector(link).scrollIntoView();
 });
 
-function scrollViewing() {
-    const link = e.target.dataset.link;
 
-    document.querySelector(link).scrollIntoView();
-}
+//arrow-up is showed when you scroll down
+
+const arrow = document.querySelector(".arrow-up");
+window.addEventListener("scroll", () => {
+
+    if (window.scrollY > home.offsetHeight / 2) {
+        arrow.classList.add("visible");
+
+    } else {
+        arrow.classList.remove("visible");
+
+    }
+
+})
+
+arrow.addEventListener('click', (e) => {
+
+    document.querySelector("#home").scrollIntoView();
+});
+
+
+// function scrollViewing() {
+//     const link = e.target.dataset.link;
+
+//     document.querySelector(link).scrollIntoView();
+// }
