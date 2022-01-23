@@ -30,6 +30,7 @@ window.addEventListener('scroll', () => {
 //handle scrolling
 
 const navbarMenu = document.querySelector('.navbar__menu');
+
 console.log(navbarMenu);
 navbarMenu.addEventListener('click', (e) => {
     const link = e.target.dataset.link;
@@ -39,6 +40,9 @@ navbarMenu.addEventListener('click', (e) => {
     // console.log(link)
 
     document.querySelector(link).scrollIntoView();
+
+
+
 });
 
 //handle contactbtn
@@ -134,3 +138,66 @@ toggleBtn.addEventListener("click", (e) => {
     const menu = document.querySelector(".navbar__menu");
     menu.classList.toggle("on");
 })
+
+
+console.log(window.scrollY)
+
+// window.addEventListener("scroll", () => {
+
+//     console.log(scrollY>625){
+
+//     }
+// })
+
+
+const sections = document.querySelectorAll("section");
+const navLi = document.querySelectorAll("#navbar ul li");
+
+window.addEventListener("scroll", () => {
+
+    var current = "";
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+
+        if (scrollY >= sectionTop - 60) {
+            current = section.getAttribute("id");
+            // console.log(current)
+        }
+        if (scrollY >= sections[4].offsetTop - 600) {
+            current = sections[4].getAttribute("id");
+        }
+
+    })
+
+    navLi.forEach(li => {
+        li.classList.remove("active");
+        if (li.classList.contains(current)) {
+            li.classList.add("active");
+        }
+    })
+
+
+})
+
+
+
+
+
+// const sections = document.querySelectorAll("section");
+// const navLi = document.querySelectorAll("nav .container ul li");
+// window.onscroll = () => {
+//   var current = "";
+
+//   sections.forEach((section) => {
+//     const sectionTop = section.offsetTop;
+//     if (pageYOffset >= sectionTop - 60) {
+//       current = section.getAttribute("id"); }
+//   });
+
+//   navLi.forEach((li) => {
+//     li.classList.remove("active");
+//     if (li.classList.contains(current)) {
+//       li.classList.add("active");
+//     }
+//   });
+// };
