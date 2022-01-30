@@ -135,7 +135,7 @@ li {
 
 
 #home {
-	height: 85vh;
+	/* height: 600px; */
 	background: #86779d;
 	padding: 40px;
 	text-align: center;
@@ -415,6 +415,7 @@ li {
 	align-items: center;
 	justify-content: center;
 	padding: 50px;
+
 }
 .project.invisible{
 	display: none;
@@ -437,6 +438,7 @@ li {
 	opacity: 0;
 	transition: all 0.3s ease-in;
 	transform: rotateY(90deg);
+
 }
 
 .project:hover .project__description {
